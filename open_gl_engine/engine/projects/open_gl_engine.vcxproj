@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\executable\projects\packages\Microsoft.Windows.CppWinRT.2.0.220531.1\build\native\Microsoft.Windows.CppWinRT.props" Condition="Exists('..\..\executable\projects\packages\Microsoft.Windows.CppWinRT.2.0.220531.1\build\native\Microsoft.Windows.CppWinRT.props')" />
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\code\headers\Camera_Component.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="..\code\headers\Camera_Control_Task.hpp" />
+    <ClInclude Include="..\code\headers\Color.hpp" />
+    <ClInclude Include="..\code\headers\Color_Buffer.hpp" />
+    <ClInclude Include="..\code\headers\Component.hpp" />
+    <ClInclude Include="..\code\headers\ComponentBits.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="..\code\headers\Component_Pool.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="..\code\headers\Cubemap.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="..\code\headers\Entity.hpp" />
+    <ClInclude Include="..\code\headers\FboNames.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="..\code\headers\fnv.hpp" />
+    <ClInclude Include="..\code\headers\Frame_Buffer.hpp" />
+    <ClInclude Include="..\code\headers\Frame_Buffer_Manager.hpp" />
+    <ClInclude Include="..\code\headers\Heightmap.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="..\code\headers\Id.hpp" />
+    <ClInclude Include="..\code\headers\Id_Provider.hpp" />
+    <ClInclude Include="..\code\headers\Input_Manager.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="..\code\headers\Iterator.hpp" />
+    <ClInclude Include="..\code\headers\Kernel.hpp" />
+    <ClInclude Include="..\code\headers\Math.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="..\code\headers\Mesh.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="..\code\headers\Mesh_Component.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="..\code\headers\Mesh_Directory.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="..\code\headers\Mesh_Loader.hpp" />
+    <ClInclude Include="..\code\headers\Model_Loader.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="..\code\headers\Movement_Component.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="..\code\headers\PostProcess_Task.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="..\code\headers\Proxy.hpp" />
+    <ClInclude Include="..\code\headers\Render_Task.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="..\code\headers\Scene.hpp" />
+    <ClInclude Include="..\code\headers\Segment.hpp" />
+    <ClInclude Include="..\code\headers\ShaderCompiler.hpp" />
+    <ClInclude Include="..\code\headers\Skybox.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="..\code\headers\Skybox_Manager.hpp" />
+    <ClInclude Include="..\code\headers\Sparse_Array.hpp" />
+    <ClInclude Include="..\code\headers\Task.hpp" />
+    <ClInclude Include="..\code\headers\Texture.hpp" />
+    <ClInclude Include="..\code\headers\Texture_Component.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="..\code\headers\Texture_Manager.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="..\code\headers\Transform_Component.hpp" />
+    <ClInclude Include="..\code\headers\Transform_Update_Task.hpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="..\code\headers\Vertex.hpp" />
+    <ClInclude Include="..\code\headers\Window.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\code\sources\Camera_Control_Task.cpp" />
+    <ClCompile Include="..\code\sources\Cubemap.cpp" />
+    <ClCompile Include="..\code\sources\Entity.cpp" />
+    <ClCompile Include="..\code\sources\Frame_Buffer.cpp" />
+    <ClCompile Include="..\code\sources\Frame_Buffer_Manager.cpp" />
+    <ClCompile Include="..\code\sources\Heightmap.cpp" />
+    <ClCompile Include="..\code\sources\Input_Manager.cpp" />
+    <ClCompile Include="..\code\sources\Kernel.cpp" />
+    <ClCompile Include="..\code\sources\Mesh.cpp" />
+    <ClCompile Include="..\code\sources\Mesh_Directory.cpp" />
+    <ClCompile Include="..\code\sources\Mesh_Loader.cpp" />
+    <ClCompile Include="..\code\sources\Model_Loader.cpp" />
+    <ClCompile Include="..\code\sources\PostProcess_Task.cpp" />
+    <ClCompile Include="..\code\sources\Render_Task.cpp" />
+    <ClCompile Include="..\code\sources\Scene.cpp" />
+    <ClCompile Include="..\code\sources\ShaderCompiler.cpp" />
+    <ClCompile Include="..\code\sources\Skybox.cpp" />
+    <ClCompile Include="..\code\sources\Skybox_Manager.cpp" />
+    <ClCompile Include="..\code\sources\Texture.cpp" />
+    <ClCompile Include="..\code\sources\Texture_Manager.cpp" />
+    <ClCompile Include="..\code\sources\Transform_Update_Task.cpp" />
+    <ClCompile Include="..\code\sources\Window.cpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{27FC5C53-2AD6-4EED-B528-B705746B265D}</ProjectGuid>
+    <RootNamespace>openglengine</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>..\output\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>..\output\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>../code/headers;../libraries/sdl3/include;../libraries/glad/include;../libraries/glm/include;../libraries/assimp/include;../libraries/soil2/include</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>../../libraries/sdl/lib/windows/visual-studio-2022/static-x64;../../libraries/glad/lib/windows/visual-studio-2022/static-x64</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2-staticd.lib;SDL2maind.lib;gladd.lib;imm32.lib;setupapi.lib;version.lib;winmm.lib;opengl32.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <Lib>
+      <AdditionalLibraryDirectories>../libraries/sdl3/lib/x64;../libraries/glad/lib/x64;../libraries/assimp/lib/x64;../libraries/soil2/lib/x64</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sdl3-static-debug.lib;glad-static-debug.lib;assimp-static-debug.lib;soil2-static-debug.lib;zlib-static-debug.lib;imm32.lib;setupapi.lib;version.lib;winmm.lib;opengl32.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4006 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>../code/headers;../libraries/sdl3/include;../libraries/glad/include;../libraries/glm/include;../libraries/assimp/include;../libraries/soil2/include</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>../../libraries/sdl/lib/windows/visual-studio-2022/static-x64;../../libraries/glad/lib/windows/visual-studio-2022/static-x64</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2-static.lib;SDL2main.lib;glad.lib;imm32.lib;setupapi.lib;version.lib;winmm.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <Lib>
+      <AdditionalLibraryDirectories>../libraries/sdl3/lib/x64;../libraries/glad/lib/x64;../libraries/assimp/lib/x64;../libraries/soil2/lib/x64</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sdl3-static-release.lib;glad-static-release.lib;assimp-static-release.lib;soil2-static-release.lib;zlib-static-release.lib;imm32.lib;setupapi.lib;version.lib;winmm.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\..\executable\projects\packages\Microsoft.Windows.CppWinRT.2.0.220531.1\build\native\Microsoft.Windows.CppWinRT.targets" Condition="Exists('..\..\executable\projects\packages\Microsoft.Windows.CppWinRT.2.0.220531.1\build\native\Microsoft.Windows.CppWinRT.targets')" />
+  </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\executable\projects\packages\Microsoft.Windows.CppWinRT.2.0.220531.1\build\native\Microsoft.Windows.CppWinRT.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\executable\projects\packages\Microsoft.Windows.CppWinRT.2.0.220531.1\build\native\Microsoft.Windows.CppWinRT.props'))" />
+    <Error Condition="!Exists('..\..\executable\projects\packages\Microsoft.Windows.CppWinRT.2.0.220531.1\build\native\Microsoft.Windows.CppWinRT.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\executable\projects\packages\Microsoft.Windows.CppWinRT.2.0.220531.1\build\native\Microsoft.Windows.CppWinRT.targets'))" />
+  </Target>
+</Project>

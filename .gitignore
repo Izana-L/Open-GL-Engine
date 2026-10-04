@@ -1,0 +1,30 @@
+# Carpetas de Visual Studio
+.vs/
+x64/
+x86/
+Win32/
+Debug/
+Release/
+[Bb]in/
+[Oo]bj/
+out/
+
+# Archivos de compilación
+*.obj
+*.pdb
+*.ilk
+*.idb
+*.ipch
+*.exe
+*.tlog
+*.log
+*.iobj
+*.ipdb
+*.lastbuildstate
+*.recipe
+
+# Configuración personal
+*.user
+*.suo
+*.VC.db
+*.VC.opendb

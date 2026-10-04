@@ -1,0 +1,107 @@
+
+// Este código es de dominio público
+// angel.rodriguez@udit.es
+
+#pragma once
+
+#include <cassert>
+#include <glad/gl.h>
+#include <SDL3/SDL_opengl.h>
+#include "Window.hpp"
+
+namespace open_gl_engine
+{
+
+    Window::Window
+    (
+        const char* title,
+        unsigned _width,
+        unsigned _height,
+        const OpenGL_Context_Settings& context_details
+    )
+    {
+        // Se hace inicializa SDL:
+
+        if (not SDL_InitSubSystem(SDL_INIT_VIDEO))
+        {
+            throw "Failed to initialize the video subsystem.";
+        }
+        
+        width = _width;
+        height = _height;
+        // Se preconfigura el contexto de OpenGL:
+
+        SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, context_details.version_major);
+        SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, context_details.version_minor);
+        SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
+        SDL_GL_SetAttribute(SDL_GL_ACCELERATED_VISUAL, 1);
+
+        if (context_details.core_profile) SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
+        if (context_details.depth_buffer_size) SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, context_details.depth_buffer_size);
+        if (context_details.stencil_buffer_size) SDL_GL_SetAttribute(SDL_GL_STENCIL_SIZE, context_details.stencil_buffer_size);
+
+        // Se crea la ventana activando el soporte para OpenGL:
+
+        window_handle = SDL_CreateWindow
+        (
+            title,
+            int(_width),
+            int(_height),
+            SDL_WINDOW_OPENGL
+        );
+
+        assert(window_handle != nullptr);
+
+        // Se crea un contexto de OpenGL asociado a la ventana:
+
+        opengl_context = SDL_GL_CreateContext(window_handle);
+
+        assert(opengl_context != nullptr);
+
+        // Una vez se ha creado el contexto de OpenGL ya se puede inicializar GLAD:
+
+        GLenum glad_is_initialized = gladLoaderLoadGL();
+
+        assert(glad_is_initialized);
+
+        // Se activa la sincronización con el refresco vertical del display:
+
+        SDL_GL_SetSwapInterval(context_details.enable_vsync ? 1 : 0);
+    }
+
+    Window::~Window()
+    {
+        gladLoaderUnloadGL();
+
+        if (opengl_context)
+        {
+            SDL_GL_DestroyContext(opengl_context);
+        }
+
+        if (window_handle)
+        {
+            SDL_DestroyWindow(window_handle);
+        }
+
+        SDL_QuitSubSystem(SDL_INIT_VIDEO);
+    }
+
+    void Window::swap_buffers()
+    {
+        SDL_GL_SwapWindow(window_handle);
+    }
+    int Window::getFramebufferWidth() const {
+        int width, height;
+        SDL_GetWindowSizeInPixels(window_handle, &width, &height);
+        return width;
+    }
+    int Window::getFramebufferHeight() const {
+        int width, height;
+        SDL_GetWindowSizeInPixels(window_handle, &width, &height);
+        return height;
+    }
+    void Window::set_title(const std::string& title)
+    {
+        SDL_SetWindowTitle(window_handle, title.c_str());
+    }
+}
